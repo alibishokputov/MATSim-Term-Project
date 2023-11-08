@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.matsim</groupId>
+    <artifactId>MATSimNetworkBaltimoreCounty</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>MATSim Network Conversion Tool</name>
+
+    <repositories>
+        <repository>
+            <id>MATSim</id>
+            <name>MATSim Maven repository</name>
+            <url>https://repo.matsim.org/repository/matsim/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+    <dependency>
+        <groupId>org.matsim</groupId>
+        <artifactId>matsim</artifactId>
+        <version>15.0</version>
+    </dependency>
+
+    <!-- MATSim OSM contrib module -->
+    <dependency>
+        <groupId>org.matsim.contrib</groupId>
+        <artifactId>osm</artifactId>
+        <version>15.0</version>
+    </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Use an appropriate version -->
+                <configuration>
+                    <source>21</source> <!-- Set this to your Java version -->
+                    <target>21</target> <!-- Set this to your Java version -->
+                </configuration>
+            </plugin>
+            <!-- More plugins if necessary -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>org.matsim.codeexamples.network.RunCreateNetworkFromOSM</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
